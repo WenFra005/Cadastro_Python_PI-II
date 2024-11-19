@@ -69,7 +69,20 @@ def cadastrarProfissional():
     print("Cadastro de profissional feito com sucesso!")
     
     voltarParaBoasVindas()
+
+def loginCliente():
+    cpf = input("CPF: ")
+    senha = input("Senha: ")
     
+    for cliente in clientes:
+        if cliente["cpf"] == cpf and cliente["senha"] == senha:
+            print(f"""Bem vindo(a) {cliente['nome']}!\n
+                  Será uma honra conectar você com trabalhadores de qualidade.
+                  """)
+            return True
+    print("CPF ou senha incorretos.")
+    return False
+       
 def voltarParaBoasVindas():
     input("\nPressione Enter para voltar para a tela de boas vindas...")
     main()
