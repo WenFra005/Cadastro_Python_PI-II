@@ -38,6 +38,5 @@ def cadastrarCliente():
     clientes.append(cliente)
     print("Cadastro de cliente realizado com sucesso!")
     
-    
-
+def main():
     
