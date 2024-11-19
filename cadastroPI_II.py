@@ -8,14 +8,6 @@ def exibirBoasVindas():
     print("""
           Bem vindo ao FacilliBee!
     Facilitamos o encontro do profissional para um serviço facilitado.
-    
-    Escolha uma das opções:
-    
-    1. Cadastro de cliente
-    2. Cadastro de profissional
-    3. Entrar como cliente
-    4. Entrar como funcionário
-    5. Sair
           """)
 
 def cadastrarCliente():
@@ -125,4 +117,44 @@ def voltarParaBoasVindas():
     main()
     
 def main():
-    
+    while True:
+        exibirBoasVindas()
+        print("""-----Escolha uma das opções------
+                1. Cadastro de cliente
+                2. Cadastro de profissional
+                3. Entrar como cliente
+                4. Entrar como funcionário
+                5. Sair
+                """)
+        escolha = int(input("\nOpção: "))
+        
+        if escolha == 1:
+            cadastrarCliente()
+        elif escolha == 2:
+            cadastrarProfissional()
+        elif escolha == 3:
+            if loginCliente():
+                voltarParaBoasVindas()
+            else:
+                esqueci = input("Esqueceu a senha? (s/n?): ")
+                if esqueci.lower() == 's':
+                    if recuperarSenha():
+                        voltarParaBoasVindas()
+                else:
+                    voltarParaBoasVindas()
+        elif escolha == 4:
+            if loginProfissioanl():
+                voltarParaBoasVindas()
+            else:
+                esqueci = input("Esqueceu a senha? (s/n?): ")
+                if esqueci.lower() == 's':
+                    if recuperarSenha():
+                        voltarParaBoasVindas()
+                else:
+                    voltarParaBoasVindas()
+        elif escolha == 5:
+            print("Saindo sistema. Até logo!")
+            break
+        else: print("Opção inválida.")
+
+main()
