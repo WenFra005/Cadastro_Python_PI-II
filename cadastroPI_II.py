@@ -82,7 +82,20 @@ def loginCliente():
             return True
     print("CPF ou senha incorretos.")
     return False
-       
+
+def loginProfissioanl():
+    cpf = input("CPF: ")
+    senha = input("Senha: ")
+    
+    for profissional in profissionais:
+        if profissional["cpf"] == cpf and profissional["senha"] == senha:
+            print(f"""Bem vindo(a) {profissional['nome']}!\n
+                  Será uma honra ter você trabalhando conosco.
+                  """)
+            return True
+    print("CPF ou senha incorretos.")
+    return False
+           
 def voltarParaBoasVindas():
     input("\nPressione Enter para voltar para a tela de boas vindas...")
     main()
