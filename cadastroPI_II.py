@@ -95,7 +95,31 @@ def loginProfissioanl():
             return True
     print("CPF ou senha incorretos.")
     return False
-           
+
+def recuperarSenha():
+    email = input("Digite seu email: ")
+    for usuario in clientes + profissionais:
+        if usuario["email"] == email:
+            codigo = random.randint(1000, 9999)
+            print(f"Código de recuperação enviado para o seu email: {codigo}")
+            codigoInformado = int(input("Digite o código de recuperação: "))
+            if codigoInformado == codigo:
+                novaSenha = input("Digite a nova senha: ")
+                confirmacaoSenha = input("Confirme a nova senha: ")
+                
+                if novaSenha == confirmacaoSenha:
+                    usuario["senha"] = novaSenha
+                    print("Senha alterada com sucesso!")
+                    return True
+                else:
+                    print("As senha não coincidem. Tente novamente.")
+                    return False
+            else:
+                print("Código incorreto.")
+                return False
+    print("Email não encontrado.")
+    return False
+
 def voltarParaBoasVindas():
     input("\nPressione Enter para voltar para a tela de boas vindas...")
     main()
