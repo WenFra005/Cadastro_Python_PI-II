@@ -1,5 +1,9 @@
 import random
 
+# Bando de dados dos usuários (em memória)
+cliente = []
+profissionais = []
+
 def exibirBoasVindas():
     print("""
           Bem vindo ao FacilliBee!
