@@ -4,12 +4,14 @@ import random
 clientes = []
 profissionais = []
 
+# Função para exibir boas-vindas
 def exibirBoasVindas():
     print("""
                     Bem vindo ao FacilliBee!
     Facilitamos o encontro do profissional para um serviço facilitado.
           """)
 
+# Função para cadastrar cliente
 def cadastrarCliente():
     nome = input("\nNome: ")
     email = input("Email: ")
@@ -32,6 +34,7 @@ def cadastrarCliente():
     
     voltarParaBoasVindas()
 
+# Função para cadastrar profissional
 def cadastrarProfissional():
     nome = input("\nNome: ")
     email = input("Email: ")
@@ -62,6 +65,7 @@ def cadastrarProfissional():
     
     voltarParaBoasVindas()
 
+# Função para login de cliente
 def loginCliente():
     cpf = input("\nCPF: ")
     senha = input("Senha: ")
@@ -74,6 +78,7 @@ def loginCliente():
     print("CPF ou senha incorretos.")
     return False
 
+# Função para login de profissional
 def loginProfissioanl():
     cpf = input("\nCPF: ")
     senha = input("Senha: ")
@@ -86,6 +91,7 @@ def loginProfissioanl():
     print("CPF ou senha incorretos.")
     return False
 
+# Função para recuperação de senha
 def recuperarSenha():
     email = input("\nDigite seu email: ")
     for usuario in clientes + profissionais:
@@ -110,10 +116,12 @@ def recuperarSenha():
     print("Email não encontrado.")
     return False
 
+# Função para voltar para a tela de boas-vindas
 def voltarParaBoasVindas():
     input("\nPressione Enter para voltar para a tela de boas vindas...")
     main()
-    
+
+# Função principal que executa o sistema   
 def main():
     while True:
         exibirBoasVindas()
