@@ -38,5 +38,9 @@ def cadastrarCliente():
     clientes.append(cliente)
     print("Cadastro de cliente realizado com sucesso!")
     
+def voltarParaBoasVindas():
+    input("\nPressione Enter para voltar para a tela de boas vindas...")
+    main()
+    
 def main():
     
