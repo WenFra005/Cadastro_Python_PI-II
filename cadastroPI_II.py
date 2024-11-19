@@ -122,7 +122,7 @@ def main():
     1. Cadastro de cliente
     2. Cadastro de profissional
     3. Entrar como cliente
-    4. Entrar como funcionário
+    4. Entrar como profissioanl
     5. Sair
     """)
         escolha = int(input("Opção: "))
