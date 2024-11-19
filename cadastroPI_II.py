@@ -6,12 +6,12 @@ profissionais = []
 
 def exibirBoasVindas():
     print("""
-          Bem vindo ao FacilliBee!
+                    Bem vindo ao FacilliBee!
     Facilitamos o encontro do profissional para um serviço facilitado.
           """)
 
 def cadastrarCliente():
-    nome = input("Nome: ")
+    nome = input("\nNome: ")
     email = input("Email: ")
     cpf = input("CPF: ")
     cep = input("CEP: ")
@@ -33,7 +33,7 @@ def cadastrarCliente():
     voltarParaBoasVindas()
 
 def cadastrarProfissional():
-    nome = input("Nome: ")
+    nome = input("\nNome: ")
     email = input("Email: ")
     cpf = input("CPF: ")
     cep = input("CEP: ")
@@ -63,33 +63,31 @@ def cadastrarProfissional():
     voltarParaBoasVindas()
 
 def loginCliente():
-    cpf = input("CPF: ")
+    cpf = input("\nCPF: ")
     senha = input("Senha: ")
     
     for cliente in clientes:
         if cliente["cpf"] == cpf and cliente["senha"] == senha:
-            print(f"""Bem vindo(a) {cliente['nome']}!\n
-                  Será uma honra conectar você com trabalhadores de qualidade.
-                  """)
+            print(f"Bem vindo(a) {cliente['nome']}!\n")
+            print("Será uma honra conectar você com trabalhadores de qualidade")
             return True
     print("CPF ou senha incorretos.")
     return False
 
 def loginProfissioanl():
-    cpf = input("CPF: ")
+    cpf = input("\nCPF: ")
     senha = input("Senha: ")
     
     for profissional in profissionais:
         if profissional["cpf"] == cpf and profissional["senha"] == senha:
-            print(f"""Bem vindo(a) {profissional['nome']}!\n
-                  Será uma honra ter você trabalhando conosco.
-                  """)
+            print(f"Bem vindo(a) {profissional['nome']}!")
+            print("\nSerá uma honra ter você trabalhando conosco.")
             return True
     print("CPF ou senha incorretos.")
     return False
 
 def recuperarSenha():
-    email = input("Digite seu email: ")
+    email = input("\nDigite seu email: ")
     for usuario in clientes + profissionais:
         if usuario["email"] == email:
             codigo = random.randint(1000, 9999)
@@ -120,12 +118,13 @@ def main():
     while True:
         exibirBoasVindas()
         print("""-----Escolha uma das opções------
-                1. Cadastro de cliente
-                2. Cadastro de profissional
-                3. Entrar como cliente
-                4. Entrar como funcionário
-                5. Sair
-                """)
+
+    1. Cadastro de cliente
+    2. Cadastro de profissional
+    3. Entrar como cliente
+    4. Entrar como funcionário
+    5. Sair
+    """)
         escolha = int(input("\nOpção: "))
         
         if escolha == 1:
