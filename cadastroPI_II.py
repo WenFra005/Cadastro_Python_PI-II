@@ -68,7 +68,7 @@ def loginCliente():
     
     for cliente in clientes:
         if cliente["cpf"] == cpf and cliente["senha"] == senha:
-            print(f"Bem vindo(a) {cliente['nome']}!\n")
+            print(f"\nBem vindo(a) {cliente['nome']}!\n")
             print("Será uma honra conectar você com trabalhadores de qualidade")
             return True
     print("CPF ou senha incorretos.")
@@ -80,8 +80,8 @@ def loginProfissioanl():
     
     for profissional in profissionais:
         if profissional["cpf"] == cpf and profissional["senha"] == senha:
-            print(f"Bem vindo(a) {profissional['nome']}!")
-            print("\nSerá uma honra ter você trabalhando conosco.")
+            print(f"\nBem vindo(a) {profissional['nome']}!")
+            print("Será uma honra ter você trabalhando conosco.")
             return True
     print("CPF ou senha incorretos.")
     return False
@@ -125,7 +125,7 @@ def main():
     4. Entrar como funcionário
     5. Sair
     """)
-        escolha = int(input("\nOpção: "))
+        escolha = int(input("Opção: "))
         
         if escolha == 1:
             cadastrarCliente()
