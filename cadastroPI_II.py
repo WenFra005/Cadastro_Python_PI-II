@@ -38,6 +38,38 @@ def cadastrarCliente():
     clientes.append(cliente)
     print("Cadastro de cliente realizado com sucesso!")
     
+    voltarParaBoasVindas()
+
+def cadastrarProfissional():
+    nome = input("Nome: ")
+    email = input("Email: ")
+    cpf = input("CPF: ")
+    cep = input("CEP: ")
+    telefone = input("Telefone: ")
+    descricao = input("Descrição: ")
+    areaAtuacao = input("Área de atuação: ")
+    categoria = input("Categoria: ")
+    curriculo = input("Anexo de currículo (caminho): ")
+    senha = input("Senha: ")
+    
+    profissional = {
+        "nome": nome,
+        "email": email,
+        "cpf": cpf,
+        "cep": cep,
+        "telefone": telefone,
+        "descricao": descricao,
+        "areaAtuacao": areaAtuacao,
+        "categoria": categoria,
+        "curriculo": curriculo,
+        "senha": senha
+    }
+    
+    profissionais.append(profissional)
+    print("Cadastro de profissional feito com sucesso!")
+    
+    voltarParaBoasVindas()
+    
 def voltarParaBoasVindas():
     input("\nPressione Enter para voltar para a tela de boas vindas...")
     main()
