@@ -1,3 +1,5 @@
+import random
+
 def exibirBoasVindas():
     print("""
           Bem vindo ao FacilliBee!
@@ -9,3 +11,6 @@ def exibirBoasVindas():
     2. Entrar como cliente
     3. Entrar como funcionário
           """)
+
+
+    
